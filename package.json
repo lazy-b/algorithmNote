@@ -1,0 +1,19 @@
+{
+  "name": "algorithm-travel",
+  "version": "1.0.0",
+  "description": "* 衡量算法好坏的重要标准有两个：**时间复杂度** 和**空间复杂度**   \r * 数据结构（data structure）：是数据的组织、管理和存储格式，其使用目的是为了高效地访问和修改数据。  \r * 数据结构的组成方式  \r     * 线性结构：数组、链表、栈、队列、哈希表  \r     * 树：二叉树、二叉堆  \r     * 图\r     * 其他：跳表、哈希链表、位图  \r * 若 存在 函数 f( n)， 使 得当 n 趋近 于 无穷大 时， T( n)/ f( n) 的 极 限值 为 不等于 零 的 常数， 则 称 f( n) 是 T( n) 的 同 数量级 函数。 记作 T( n)= O( f( n))， 称为 O( f( n))， O 为 算法 的 渐进 时间 复杂度， 简称 为 时间 复杂度。",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
