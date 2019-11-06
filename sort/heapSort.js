@@ -5,6 +5,11 @@ const upAdjust = (arr, start) => {
 
   const temp = arr[childIndex];
 
+  // 如果子节点已经大于父节点，则直接返回
+  if (temp >= arr[parentIndex]) {
+    return;
+  }
+
   while (childIndex > 0 && temp < arr[parentIndex]) {
     arr[childIndex] = arr[parentIndex];
     childIndex = parentIndex;

@@ -30,6 +30,11 @@ const shifUp = function(arr, start) {
   let parentIndex = ~~((childIndex - 1) / 2);
   let temp = arr[childIndex];
 
+  // 如果子节点已经大于父节点，则直接返回
+  if (temp >= arr[parentIndex]) {
+    return;
+  }
+
   // 子节点索引大于0 且 子节点小于父节点 子节点上浮
   while (childIndex > 0 && temp < arr[parentIndex]) {
     // 只用对子节点赋值就行
@@ -87,12 +92,12 @@ MinHeap.prototype.removeMin = function() {
   }
 
   const min = this.heap[0];
-  const currSize = this.currSize--;
-  this.heap[0] = this.heap[currSize - 1];
-  this.heap.splice(currSize - 1, 1);
+  // const currSize = this.currSize;
+  this.heap[0] = this.heap[this.currSize - 1];
+  this.heap.splice(this.currSize-- - 1, 1);
 
   // 局部自上向下 下滑调整
-  shifDown(this.heap, 0, this.currSize - 1);
+  shifDown(this.heap, 0, this.currSize);
 
   return min;
 };
@@ -105,6 +110,7 @@ MinHeap.prototype.size = function() {
 // 打印最小堆
 MinHeap.prototype.print = function() {
   console.log(this.heap);
+  return this.heap;
 };
 
 // 获取最小堆的最小值
@@ -115,3 +121,5 @@ MinHeap.prototype.getMin = function() {
 
   return null;
 };
+
+module.exports = MinHeap;
