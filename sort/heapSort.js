@@ -5,7 +5,7 @@ const upAdjust = (arr, start) => {
 
   const temp = arr[childIndex];
 
-  while (childIndex > start && temp < arr[parentIndex]) {
+  while (childIndex > 0 && temp < arr[parentIndex]) {
     arr[childIndex] = arr[parentIndex];
     childIndex = parentIndex;
     parentIndex = ~~((parentIndex - 1) / 2);
